@@ -1,6 +1,8 @@
 ### Planning Story
 12/8 - Set up project and github repo.
      - Sign up, sign in, change password and sign out functionality built
+     - text-align: center added to scss
+     - added `New Game` button (with no functionality yet)
 
 ### User Stories
 - As a user, I want to sign in so that I can play the game
