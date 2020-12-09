@@ -4,6 +4,11 @@
      - text-align: center added to scss
      - added `New Game` button (with no functionality yet)
 
+12/9 - Built tic tac toe grid in html/scss
+     - Created separate view state for gameplay
+     - added return to menu button (no functionality)
+     - made some styling adjustments
+
 ### User Stories
 - As a user, I want to sign in so that I can play the game
 - As a user, I want to be able to sign out of the game

@@ -1,9 +1,47 @@
 @import '~bootstrap/scss/bootstrap';
 
+$game-width: 80%;
+$box-height: 20vw;
+$bg-color: #888888;
+
 body {
+  text-align: center;
+  background-color: $bg-color;
+}
+
+button {
+  margin: 10px;
+}
+
+#menu-button {
   text-align: center;
 }
 
 h5 {
   margin-top: 20px;
+}
+
+.gameplay {
+  display: flex;
+}
+
+#turn {
+  height: 5vw;
+}
+.container {
+  // align-self: center;
+  width: $game-width;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  background-color: #808080;
+  border: 1px solid black;
+  height: $box-height;
+  margin: 5px;
+  // box-shadow: 3px 5px 8px;
 }
