@@ -6,8 +6,9 @@
 
 12/9 - Built tic tac toe grid in html/scss
      - Created separate view state for gameplay
-     - added return to menu button (no functionality)
+     - added return to menu button
      - made some styling adjustments
+     - Succesfully got boxes to display an 'X' or 'O' if clicked, but still getting a console.log error for event properties.
 
 ### User Stories
 - As a user, I want to sign in so that I can play the game

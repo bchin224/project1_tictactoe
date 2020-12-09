@@ -12,6 +12,26 @@ const newGame = function (data) {
   })
 }
 
+const boxClick = function (cellIndex, player, status) {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    data: {
+      game: {
+        cell: {
+          index: cellIndex,
+          value: player
+        },
+        over: status
+      }
+    },
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  newGame
+  newGame,
+  boxClick
 }
