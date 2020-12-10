@@ -10,7 +10,9 @@
      - made some styling adjustments
      - Succesfully got boxes to display an 'X' or 'O' if clicked, but still getting a console.log error for event properties.
      - Made it so you can't click on occupied boxes
-     - Turn bar updates to say who's turn it is
+     - Turn bar updates to say whose turn it is
+
+12/10 - Succesfully got PATCH requests to api for updating the game as boxes were clicked on
 
 ### User Stories
 - As a user, I want to sign in so that I can play the game

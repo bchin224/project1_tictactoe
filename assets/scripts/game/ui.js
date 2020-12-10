@@ -6,7 +6,7 @@ const store = require('./../store.js')
 const newGameSuccess = function (data) {
   console.log('New Game Started', data.game._id)
   store.game = data.game
-  console.log(store.game) // object with array, game id, over set to false, etc
+  // console.log(store.game) // object with array, game id, over set to false, etc
   $('#message-display').text('')
   // clear board for new game (this is the value of each box)
   $('.box').text('')
@@ -21,7 +21,20 @@ const newGameFailure = function (error) {
   $('#message-display').text('Failed to start new game' + error.responseJSON.message)
 }
 
+const gameDataSuccess = function (response) {
+  store.game = response.game
+  console.log(store.game)
+  // console.log('These are the cells', store.game.cells)
+  // store.game.id = response.game._id
+}
+
+const gameDataFailure = function (error) {
+  $('#message-display').text('Failed to acces game data' + error.responseJSON.message)
+}
+
 module.exports = {
   newGameSuccess,
-  newGameFailure
+  newGameFailure,
+  gameDataSuccess,
+  gameDataFailure
 }
