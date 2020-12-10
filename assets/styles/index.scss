@@ -21,6 +21,10 @@ h5 {
   display: flex;
 }
 
+menu-button {
+  text-align: center;
+}
+
 #turn {
   height: 5vw;
 }
@@ -39,5 +43,5 @@ h5 {
   border: 1px solid black;
   height: $box-height;
   margin: 5px;
-  // box-shadow: 3px 5px 8px;
+  box-shadow: 3px 5px 8px;
 }

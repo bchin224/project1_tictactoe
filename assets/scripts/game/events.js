@@ -12,26 +12,38 @@ const onNewGame = function (event) {
   // get new game ID info
   const newGameData = event.target
   const data = getFormFields(newGameData)
-  $('.box').text('') // clear board for new game
-
   api.newGame(data)
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
 }
 
 const onBoxClick = function (event) {
-  event.preventDefault()
-  // console.log('Box was clicked', event)
+  // event.preventDefault()
+  // event.target = the element being clicked
+  console.log('Box was clicked', event.target)
   // set selected box to a value
+  // $(selectedBox.text() ===  the text set in onNewGame)
   const selectedBox = event.target
+  console.log('This is the value of a blank', $(selectedBox).text())
   // const updateBox = selectedBox.data
-  if (player === 'X') {
-    $(selectedBox).text('X')
-    player = 'O'
-  } else if (player === 'O') {
-    $(selectedBox).text('O')
-    player = 'X'
+  if ($(selectedBox).text() === '') {
+    // console.log('This is empty')
+    if (player === 'X') {
+      $(selectedBox).text('X')
+      $('#message-display').text('')
+      player = 'O'
+      $('#turn').text('It is O\'s turn')
+    } else if (player === 'O') {
+      $(selectedBox).text('O')
+      $('#message-display').text('')
+      player = 'X'
+      $('#turn').text('It is X\'s turn')
+    }
+  } else {
+    $('#message-display').text('That space has already been taken! Try again!')
+    console.log('Space was taken')
   }
+
   // check if space is empty, then add
 
   // then add to array
