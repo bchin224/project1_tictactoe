@@ -13,9 +13,9 @@ const newGame = function (data) {
 }
 
 const boxClick = function (cellIndex, player, status) {
-  console.log('Cell index', cellIndex)
-  console.log('player', player)
-  console.log('status', status)
+  // console.log('Cell index', cellIndex)
+  // console.log('player', player)
+  // console.log('status', status)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',

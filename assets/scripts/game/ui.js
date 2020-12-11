@@ -11,7 +11,7 @@ const newGameSuccess = function (data) {
   // clear board for new game (this is the value of each box)
   $('.box').text('')
   // initialize that X starts the game
-  $('#turn').text('It is X\'s turn')
+  $('.turn').text('It is X\'s turn')
   // reveal gameplay class and grid
   $('.gameplay').show()
   $('.authenticated').hide()
@@ -24,8 +24,10 @@ const newGameFailure = function (error) {
 const gameDataSuccess = function (response) {
   store.game = response.game
   console.log(store.game)
-  // console.log('These are the cells', store.game.cells)
-  // store.game.id = response.game._id
+  // check if winning combo
+  // const checkStatus = function (status) {
+  //   if (selectedBox[])
+  // }
 }
 
 const gameDataFailure = function (error) {

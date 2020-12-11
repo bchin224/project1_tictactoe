@@ -19,7 +19,7 @@ const onNewGame = function (event) {
 const onBoxClick = function (event) {
   event.preventDefault()
   // event.target = the element being clicked
-  console.log('Box was clicked', event.target)
+  // console.log('Box was clicked', event.target)
   // set selected box to a value
   const selectedBox = event.target
   // const data = getFormFields(selectedBox)
@@ -35,22 +35,61 @@ const onBoxClick = function (event) {
       $(selectedBox).text('X')
       $('#message-display').text('')
       initPlayer = 'O'
-      $('#turn').text('It is O\'s turn')
+      $('.turn').text('It is O\'s turn')
     } else if (currentPlayer === 'O') {
       $(selectedBox).text('O')
       $('#message-display').text('')
       initPlayer = 'X'
-      $('#turn').text('It is X\'s turn')
+      $('.turn').text('It is X\'s turn')
     }
   } else {
     $('#message-display').text('That space has already been taken! Try again!')
     console.log('Space was taken')
   }
 
-  // check if space is empty, then add
-  // then add to array
-  // console.log('Updated box data', updateBox)
-  const gameOver = false
+  // check if game is over / won
+  let gameOver = false
+  const boxValue = $('.box')
+  // console.log('index value', boxValue[3].innerText)
+  // console.log('index value', boxValue[0].innerText)
+  // console.log('player', currentPlayer)
+  if (boxValue[0].innerText !== '' && boxValue[0].innerText === boxValue[1].innerText &&
+  boxValue[1].innerText === boxValue[2].innerText) {
+    $('#message-display').text(`${currentPlayer} won!`)
+    gameOver = true
+  } else if (boxValue[3].innerText !== '' && boxValue[3].innerText === boxValue[4].innerText &&
+  boxValue[4].innerText === boxValue[5].innerText) {
+    $('#message-display').text(`${currentPlayer} won!`)
+    gameOver = true
+  } else if (boxValue[6].innerText !== '' && boxValue[6].innerText === boxValue[7].innerText &&
+  boxValue[7].innerText === boxValue[8].innerText) {
+    $('#message-display').text(`${currentPlayer} won!`)
+    gameOver = true
+  } else if (boxValue[0].innerText !== '' && boxValue[0].innerText === boxValue[3].innerText &&
+  boxValue[3].innerText === boxValue[6].innerText) {
+    $('#message-display').text(`${currentPlayer} won!`)
+    gameOver = true
+  } else if (boxValue[1].innerText !== '' && boxValue[1].innerText === boxValue[4].innerText &&
+  boxValue[4].innerText === boxValue[7].innerText) {
+    $('#message-display').text(`${currentPlayer} won!`)
+    gameOver = true
+  } else if (boxValue[2].innerText !== '' && boxValue[2].innerText === boxValue[5].innerText &&
+  boxValue[5].innerText === boxValue[8].innerText) {
+    $('#message-display').text(`${currentPlayer} won!`)
+    gameOver = true
+  } else if (boxValue[0].innerText !== '' && boxValue[0].innerText === boxValue[4].innerText &&
+  boxValue[4].innerText === boxValue[8].innerText) {
+    $('#message-display').text(`${currentPlayer} won!`)
+    gameOver = true
+  } else if (boxValue[2].innerText !== '' && boxValue[2].innerText === boxValue[4].innerText &&
+  boxValue[4].innerText === boxValue[6].innerText) {
+    $('#message-display').text(`${currentPlayer} won!`)
+    gameOver = true
+  }
+
+  if (gameOver === true) {
+    // do something to make the game unclickable?
+  }
 
   api.boxClick(selectedBox.dataset.cellIndex, currentPlayer, gameOver)
     .then(ui.gameDataSuccess)
