@@ -16,7 +16,11 @@
 12/10 - Succesfully got PATCH requests to api for updating the game as boxes were clicked on
       - Added winning combinations
       - Message-display shows the player who won
-      -
+
+12/11 - added tie game functionality
+      - Got game to toggle away after someone wins so it can't be clicked
+      - Returning to menu and starting a new game works now
+      - Check game history now calculates the number of games played succesfully.
 
 ### User Stories
 - As a user, I want to sign in so that I can play the game

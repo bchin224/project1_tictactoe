@@ -34,7 +34,19 @@ const boxClick = function (cellIndex, player, status) {
   })
 }
 
+const gamesHistory = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/games/',
+    method: 'GET',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   newGame,
-  boxClick
+  boxClick,
+  gamesHistory
 }

@@ -16,27 +16,30 @@ const newGameSuccess = function (data) {
   $('.gameplay').show()
   $('.authenticated').hide()
 }
-
 const newGameFailure = function (error) {
   $('#message-display').text('Failed to start new game' + error.responseJSON.message)
 }
 
 const gameDataSuccess = function (response) {
   store.game = response.game
-  console.log(store.game)
-  // check if winning combo
-  // const checkStatus = function (status) {
-  //   if (selectedBox[])
-  // }
 }
-
 const gameDataFailure = function (error) {
   $('#message-display').text('Failed to acces game data' + error.responseJSON.message)
+}
+
+const gameHistorySuccess = function (response) {
+  console.log(response.games.length)
+  $('#message-display').text(`You have played ${response.games.length} times!`)
+}
+const gameHistoryFailure = function (error) {
+  $('#message-display').text('Failed to get number of games played' + error.responseJSON.message)
 }
 
 module.exports = {
   newGameSuccess,
   newGameFailure,
   gameDataSuccess,
-  gameDataFailure
+  gameDataFailure,
+  gameHistorySuccess,
+  gameHistoryFailure
 }

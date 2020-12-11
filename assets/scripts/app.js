@@ -21,4 +21,5 @@ $(() => {
   $('#new-game-btn').on('click', gameEvents.onNewGame)
   $('.box').on('click', gameEvents.onBoxClick)
   $('#menu-button').on('click', gameEvents.onMenuClick)
+  $('#games-played').on('click', gameEvents.onGamesHistory)
 })

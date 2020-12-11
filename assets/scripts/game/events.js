@@ -5,6 +5,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 
 let initPlayer = 'X' // initialize turn and player variables
+let gameOver
 
 const onNewGame = function (event) {
   event.preventDefault() // prevent page refresh
@@ -48,7 +49,7 @@ const onBoxClick = function (event) {
   }
 
   // check if game is over / won
-  let gameOver = false
+  gameOver = false
   const boxValue = $('.box')
   // console.log('index value', boxValue[3].innerText)
   // console.log('index value', boxValue[0].innerText)
@@ -85,10 +86,20 @@ const onBoxClick = function (event) {
   boxValue[4].innerText === boxValue[6].innerText) {
     $('#message-display').text(`${currentPlayer} won!`)
     gameOver = true
+  } else if (boxValue[0].innerText !== '' && boxValue[1].innerText !== '' &&
+      boxValue[2].innerText !== '' && boxValue[3].innerText !== '' &&
+      boxValue[4].innerText !== '' && boxValue[5].innerText !== '' &&
+      boxValue[6].innerText !== '' && boxValue[7].innerText !== '' &&
+      boxValue[6].innerText !== '') {
+    $('#message-display').text('It\'s a tie! Click the Return to Menu button to start a new game.')
+    gameOver = true
   }
 
   if (gameOver === true) {
     // do something to make the game unclickable?
+    console.log('GAME IS OVER')
+    // $('.box').off('click')
+    $('.box').toggle('click')
   }
 
   api.boxClick(selectedBox.dataset.cellIndex, currentPlayer, gameOver)
@@ -100,10 +111,22 @@ const onMenuClick = function (event) {
   event.preventDefault()
   $('.gameplay').hide()
   $('.authenticated').show()
+  gameOver = false
+  $('.box').toggle('click')
+}
+
+const onGamesHistory = function (event) {
+  event.preventDefault()
+  const gameData = event.target
+  const data = getFormFields(gameData)
+  api.gamesHistory(data)
+    .then(ui.gameHistorySuccess)
+    .catch(ui.gameHistoryFailure)
 }
 
 module.exports = {
   onNewGame,
   onBoxClick,
-  onMenuClick
+  onMenuClick,
+  onGamesHistory
 }
