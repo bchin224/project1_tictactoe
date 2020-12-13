@@ -10,6 +10,8 @@ let gameOver
 const onNewGame = function (event) {
   event.preventDefault() // prevent page refresh
   // get new game ID info
+  $('#menu-button').hide()
+  initPlayer = 'X'
   const newGameData = event.target
   const data = getFormFields(newGameData)
   api.newGame(data)
@@ -98,6 +100,7 @@ const onBoxClick = function (event) {
   if (gameOver === true) {
     // do something to make the game unclickable?
     console.log('GAME IS OVER')
+    $('#menu-button').show()
     // $('.box').off('click')
     $('.box').toggle('click')
   }
@@ -113,6 +116,8 @@ const onMenuClick = function (event) {
   $('.authenticated').show()
   gameOver = false
   $('.box').toggle('click')
+  $('#menu-button').hide()
+  $('#message-display').text('')
 }
 
 const onGamesHistory = function (event) {

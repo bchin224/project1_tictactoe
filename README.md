@@ -21,7 +21,7 @@
       - Got game to toggle away after someone wins so it can't be clicked
       - Returning to menu and starting a new game works now
       - Check game history now calculates the number of games played succesfully.
-
+12/13 - Styling frontend
 ### User Stories
 - As a user, I want to sign in so that I can play the game
 - As a user, I want to be able to sign out of the game
@@ -33,10 +33,9 @@
 - As a user, I want my user data to be private
 
 ### Technologies Used
-html
-css
-bootstrap
-ajax
+HTML/CSS
+Bootstrap
+JavaScript
 JQuery
 
 ### Unsolved Problems

@@ -7,7 +7,7 @@ const signUpSuccess = function (response) {
   $('form').trigger('reset')
 }
 const signUpFailure = function (error) {
-  $('#message-display').text('Sign up failed with error:' + error.responseJSON.message)
+  $('#message-display').text('Sign up failed: ' + error.responseJSON.message)
 }
 
 const signInSuccess = function (response) {
@@ -18,7 +18,7 @@ const signInSuccess = function (response) {
   $('form').trigger('reset')
 }
 const signInFailure = function (error) {
-  $('#message-display').text('Sign in failed with error:' + error.responseJSON.message)
+  $('#message-display').text('Failed to sign in: ' + error.responseJSON.message)
 }
 
 const changePassSuccess = function () {
@@ -37,7 +37,7 @@ const signOutSuccess = function () {
   $('form').trigger('reset')
 }
 const signOutFailure = function (error) {
-  $('#message-display').text('Failed to sign out' + error.responseJSON.message)
+  $('#message-display').text('Failed to sign out ' + error.responseJSON.message)
 }
 
 module.exports = {

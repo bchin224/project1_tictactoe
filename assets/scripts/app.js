@@ -13,6 +13,7 @@ $(() => {
   // authentication listeners
   $('.authenticated').hide()
   $('.gameplay').hide()
+  $('#menu-button').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
