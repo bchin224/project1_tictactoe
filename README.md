@@ -22,6 +22,8 @@
       - Returning to menu and starting a new game works now
       - Check game history now calculates the number of games played succesfully.
 12/13 - Styling frontend
+      - Fixed sizing issues with game board
+      - Added background to boxes
 ### User Stories
 - As a user, I want to sign in so that I can play the game
 - As a user, I want to be able to sign out of the game
@@ -39,7 +41,7 @@ JavaScript
 JQuery
 
 ### Unsolved Problems
-
+- Background should animate
 
 ### Wireframes
 - Link to updated tic tac toe wireframe: https://imgur.com/a/JOpdvcc (12/8)
