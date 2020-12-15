@@ -4,7 +4,7 @@
 const store = require('./../store.js')
 
 const newGameSuccess = function (data) {
-  console.log('New Game Started', data.game._id)
+  // console.log('New Game Started', data.game._id)
   store.game = data.game
   // console.log(store.game) // object with array, game id, over set to false, etc
   $('#message-display').text('')
@@ -28,7 +28,7 @@ const gameDataFailure = function (error) {
 }
 
 const gameHistorySuccess = function (response) {
-  console.log(response.games.length)
+  // console.log(response.games.length)
   $('#message-display').text(`You have played ${response.games.length} times!`)
 }
 const gameHistoryFailure = function (error) {

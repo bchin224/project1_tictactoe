@@ -47,7 +47,7 @@ const onBoxClick = function (event) {
     }
   } else {
     $('#message-display').text('That space has already been taken! Try again!')
-    console.log('Space was taken')
+    // console.log('Space was taken')
   }
 
   // check if game is over / won
@@ -99,7 +99,7 @@ const onBoxClick = function (event) {
 
   if (gameOver === true) {
     // do something to make the game unclickable?
-    console.log('GAME IS OVER')
+    // console.log('GAME IS OVER')
     $('#menu-button').show()
     // $('.box').off('click')
     $('.box').toggle('click')

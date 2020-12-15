@@ -33,7 +33,7 @@ const changePassFailure = function (error) {
 }
 
 const signOutSuccess = function () {
-  console.log('Signed Out')
+  // console.log('Signed Out')
   $('#message-display').text('Signed out successfully')
   store.user = null
   $('.unauthenticated').show()
